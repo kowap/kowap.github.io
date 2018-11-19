@@ -2,9 +2,7 @@
 
 importScripts('sw-toolbox.js');
 
-toolbox.precache(["index.html","style/style.css"]);
-
-toolbox.router.get('/images/*', toolbox.cacheFirst);
+toolbox.precache(["index.html","dist/css/main.css","dist/js/main.js","dist/js/main.min.js"]);
 
 toolbox.router.get('/*', toolbox.networkFirst, {
     networkTimeoutSeconds: 5
