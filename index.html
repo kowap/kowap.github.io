@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <meta charset="utf-8" />
-        <title>Лол</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+    <title>Вырезать домен из ссылки</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/sw.js').then(function (registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function (err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
 </head>
 <body>
-<textarea id="text" style="width: 100%; height: 250px"></textarea>
-<br>
-<br>
-<a id="btn" href="javascript:void(0);">Чистить</a>
-<br>
-<br>
-<textarea id="result" style="width: 100%; height: 250px"></textarea>
-<br>
-<script src="js/main.js"></script>
+<div class="container">
+    <div class="row">
+        <h1>Вырезать домен из ссылки</h1>
+        <div>
+            <ul>
+                <li>В поле "Список ссылок" необходимо вставить список ссылок</li>
+                <li>Каждая ссылка должна быть разделена новой строкой</li>
+                <li>Каждай ссылка в начале должна иметь https:// или http://</li>
+            </ul>
+        </div>
+        <form onsubmit="return false;">
+            <div class="six columns">
+                <label for="text">Список ссылок</label>
+                <textarea class="u-full-width" id="text"></textarea>
+            </div>
+            <div class="six columns">
+                <label for="result">Результат</label>
+                <textarea class="u-full-width" id="result"></textarea>
+            </div>
+            <button id="btn" class="button-primary">Запустить</button>
+        </form>
+    </div>
+</div>
+<link rel="stylesheet" href="dist/css/main.css">
+<script src="dist/js/main.min.js"></script>
 </body>
 </html>
