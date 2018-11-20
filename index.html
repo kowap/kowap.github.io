@@ -21,6 +21,19 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCeCxak38tRihR-6WX8KgY37bcI04qa6R4",
+        authDomain: "urlparcer.firebaseapp.com",
+        databaseURL: "https://urlparcer.firebaseio.com",
+        projectId: "urlparcer",
+        storageBucket: "",
+        messagingSenderId: "353040435024"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function () {
